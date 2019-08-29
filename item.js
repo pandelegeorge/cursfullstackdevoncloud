@@ -5,7 +5,7 @@ var allitems = []
 
 itemRouter.route('/item')
            .get(( req, res ) => {
-            allitems = []
+            
             sql.query("SELECT * FROM item",  (err, rows) => {
                 if (err) throw err;
                 rows.forEach( ( row ) => {
@@ -14,7 +14,7 @@ itemRouter.route('/item')
             })
             
             res.json(allitems);
-
+            allitems = []
            })
            .post(( req, res ) => {
                 sql.query(`insert into item (id, item_name, item_category, item_price) 

@@ -1,10 +1,11 @@
 const express = require('express')
 const itemRouter = express.Router();
 const sql = require('./db.js')
-var allitems = []
+
 
 itemRouter.route('/item')
            .get(( req, res ) => {
+            var allitems = []
             sql.query("SELECT * FROM item",  (err, rows) => {
                 if (err) throw err;
                 rows.forEach( ( row ) => {

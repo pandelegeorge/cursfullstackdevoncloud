@@ -1,0 +1,21 @@
+<html>
+    <script>
+    function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "http://localhost:3000/api/item", true);
+        xhttp.send();
+    }
+    </script>
+    <h1>Welocme to Apa Nova Curs</h1>
+    <img src="apanova-logo-simplu.jpg">
+    <hr />
+    <div id="demo">
+        <h2>Let AJAX change this text</h2>
+        <button type="button" onclick="loadDoc()">Change Content</button>
+    </div>
+</html>

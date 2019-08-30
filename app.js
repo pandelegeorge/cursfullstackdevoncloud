@@ -5,11 +5,11 @@ const port = process.env.port || 8080;
 const bodyParser = require('body-parser');
 const itemRouter = require('./item.js');
 const bookRouter = require('./books.js');
-const cors = require('cors');
+
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
-app.use(cors())
+
 
 app.use('/api', itemRouter);
 app.use('/api', bookRouter);
